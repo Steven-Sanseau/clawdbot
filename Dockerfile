@@ -16,9 +16,5 @@ RUN pnpm ui:install
 RUN pnpm ui:build
 
 ENV NODE_ENV=production
-ENV HOME=/data
-
-# Create data directory for persistent storage
-RUN mkdir -p /data/.clawdbot /data/clawd
 
 CMD ["node", "dist/index.js", "gateway-daemon", "--bind", "lan", "--port", "18789"]
