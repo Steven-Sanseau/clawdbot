@@ -17,6 +17,4 @@ RUN pnpm ui:build
 
 ENV NODE_ENV=production
 
-# SETUP MODE: Container stays alive for initial setup
-# After setup, change to: CMD ["node", "dist/index.js", "gateway-daemon", "--bind", "tailnet", "--port", "18789"]
-CMD ["tail", "-f", "/dev/null"]
+CMD ["node", "dist/index.js", "gateway-daemon", "--bind", "lan", "--port", "18789"]
